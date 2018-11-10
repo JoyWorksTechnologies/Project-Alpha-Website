@@ -10,27 +10,30 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" id=”font-awesome-css” href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 	<div class="container-fluid"
-			<a class="navbar-brand" href="#"><img src ="img/logo.png" alt="Joy Works" style="width:180px;height:95px;"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarResponsive">
+			<a class="navbar-brand" href="#"><img src ="img/logo.png" alt="Joy Works"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ui class="navbar-nav  ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">What we do</a>
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#whatwedo">What we do</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Who we are</a>
+							<a class="nav-link" href="#whoweare">Who we are</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Connect</a>
+							<a class="nav-link" href="#connect">Connect</a>
 						</li>
 					</ul>
 				</div>
@@ -47,7 +50,7 @@
 	</ul>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img src="img/background.png">
+			<img class="d-block w-100" src="img/background.png" alt="First slide">
 			<div class="carousel-caption">
 				<h1 class="display-2">We are JoyWorks</h1>
 				<h3> and we are Awesome!</h3>
@@ -55,12 +58,20 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img src="img/bg2.jpeg">
+			<img class="d-block w-100" src="img/bg2.jpeg" alt="Second slide">
 		</div>
 		<div class="carousel-item">
-			<img src="img/bg3.jpeg">
+			<img class="d-block w-100" src="img/bg3.jpeg" alt="Third slide">
 		</div>
 	</div>
+	<a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
 <!--- Jumbotron -->
@@ -72,7 +83,7 @@
 <!--- Three Column Section -->
 
 <!--- What we do -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="whatwedo">
 	<div class="row Welcome text-center">
 		<div class="col-12">
 			<h1 class="display-4">What we do</h1>
@@ -135,7 +146,7 @@
 
 
 <!--- Meet the team -->
-<div class="container-fluid padding">
+<div class="container-fluid padding"  id="whoweare">
 	<div class="row Welcome text-center">
 		<div class="col-12" id="who we are">
 			<h1 class="display-4">Who we are</h1>
@@ -183,7 +194,7 @@
 
 
 <!--- Connect -->
-<div class="container-fluid padding">
+<div class="container-fluid padding" id="connect">
 	<div class="row text-center padding">
 		<div class="col-12">
 			<h1 class="display-4">Connect</h1>
@@ -198,7 +209,6 @@
 		</div>
 	</div>
 </div>
-
 
 
 <!--- Footer -->
@@ -226,5 +236,39 @@
 			<br>
 				<button type="button" class="btn btn-primary btn-lg">Schedule a demo</button>
 			</div>
+
+			<!--Scroll Back Arrow -->
+
+			<a href="#" class="back-to-top" style="display: inline;">
+			<i class="fa fa-arrow-circle-up"></i>
+			</a>
+
+		<!--	<a title="Scroll back to top" rel="nofollow" href="#" class="generate-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="400" data-start-scroll="300">
+				<span class="screen-reader-text">Scroll back to top</span>
+			</a>-->
+
+
+<!--JavaScript for Scroll Back Arrow -->
+
+	<script>
+
+		jQuery(document).ready(function() {
+		var offset = 250;
+		var duration = 300;
+		jQuery(window).scroll(function() {
+		if (jQuery(this).scrollTop() > offset) {
+		jQuery('.back-to-top').fadeIn(duration);
+		} else {
+		jQuery('.back-to-top').fadeOut(duration);
+		}
+		});
+		jQuery('.back-to-top').click(function(event) {
+		event.preventDefault();
+		jQuery('html, body').animate({scrollTop: 0}, duration);
+		return false;
+		})
+		});
+	</script>
+
 </body>
 </html>
